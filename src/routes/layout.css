@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+	--font-display: 'Lalezar', 'Nunito', system-ui, sans-serif;
+
+	--color-brand-50: #f2faff;
+	--color-brand-100: #e3f4ff;
+	--color-brand-200: #cdebff;
+	--color-brand-300: #aaddff;
+	--color-brand-400: #7ec9ff;
+	--color-brand-500: #54b3fb;
+	--color-brand-600: #2f95e3;
+	--color-brand-700: #2376b8;
+	--color-brand-800: #1d5d92;
+	--color-brand-900: #194c75;
+	--color-brand-950: #0f2f4d;
+}
+
+html,
+body {
+	font-family: var(--font-sans);
+	color: var(--color-brand-950);
+	background-color: #ffffff;
+}
+
+::selection {
+	background: var(--color-brand-300);
+	color: var(--color-brand-950);
+}
+
+html {
+	scroll-behavior: smooth;
+}
