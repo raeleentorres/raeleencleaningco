@@ -68,12 +68,49 @@
 		'Dishwashing',
 		'Organization & Home Reset',
 		'Linen Changes & Airbnb Restocking',
-		'Pet Hair Removal'
+		'Pet Hair Removal',
+		'Trash Removal',
+		'Eco-Friendly Cleaning Options'
+	];
+
+	const pestServices = [
+		'Ant Control',
+		'Roach Treatment',
+		'Spider Prevention',
+		'General Pest Prevention'
+	];
+
+	const reasons = [
+		{
+			title: 'Reliable & Professional Team',
+			description: 'Show up when we say we will and leave your space looking its best.'
+		},
+		{
+			title: 'Detail-Oriented Luxury Style',
+			description: 'The small things matter — baseboards, corners, behind the appliances.'
+		},
+		{
+			title: 'Flexible Scheduling',
+			description: 'One-time, weekly, biweekly, monthly, or short-notice — we work around you.'
+		},
+		{
+			title: 'Great for Families, Hosts & Businesses',
+			description: 'Homes, Airbnbs, studios, and offices — each gets the care it deserves.'
+		},
+		{
+			title: 'Judgment-Free Cleaning',
+			description: "However the space looks today is fine. We're here to help."
+		},
+		{
+			title: 'Consistent Communication & Care',
+			description: 'Clear scheduling, clear pricing, and clear updates every step of the way.'
+		}
 	];
 
 	const navLinks = [
 		{ href: '#services', label: 'Services' },
 		{ href: '#pricing', label: 'Pricing' },
+		{ href: '#pest', label: 'Pest Control' },
 		{ href: '#area', label: 'Service Area' },
 		{ href: '#about', label: 'About' },
 		{ href: '#contact', label: 'Contact' }
@@ -434,6 +471,77 @@
 		</div>
 	</section>
 
+	<!-- Pest Control -->
+	<section id="pest" class="mx-auto max-w-6xl scroll-mt-24 px-5 py-20 md:py-28">
+		<div class="grid items-center gap-12 md:grid-cols-5">
+			<div class="md:col-span-3">
+				<p class="text-sm font-bold tracking-widest text-brand-500 uppercase">Add-On</p>
+				<h2 class="mt-2 font-display text-4xl text-brand-900 md:text-5xl">Pest Control Services</h2>
+				<p class="mt-5 text-lg text-brand-900/80">
+					We also offer pest control add-on services for homes, rental properties, Airbnb units, and
+					businesses throughout San Antonio. Our preventative and treatment options help keep your
+					space clean, comfortable, and pest-free.
+				</p>
+				<div class="mt-8 grid gap-3 sm:grid-cols-2">
+					{#each pestServices as pest (pest)}
+						<div
+							class="flex items-center gap-3 rounded-2xl bg-white px-5 py-4 ring-1 ring-brand-100"
+						>
+							<span
+								class="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-brand-100 text-brand-700"
+							>
+								<svg
+									class="h-5 w-5"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path d="M12 2v4M8 6l-2-2M16 6l2-2" />
+									<ellipse cx="12" cy="13" rx="5" ry="7" />
+									<path d="M7 10H3M21 10h-4M7 16H3M21 16h-4M7 13H2M22 13h-5" />
+								</svg>
+							</span>
+							<span class="font-semibold text-brand-900">{pest}</span>
+						</div>
+					{/each}
+				</div>
+				<p class="mt-6 text-sm text-brand-900/60">
+					Available as standalone visits or bundled with a cleaning. Ask for current pricing.
+				</p>
+			</div>
+			<div class="relative md:col-span-2" aria-hidden="true">
+				<div
+					class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-brand-200 to-brand-400 opacity-40 blur-2xl"
+				></div>
+				<div
+					class="relative flex flex-col gap-3 rounded-[2rem] bg-gradient-to-br from-brand-500 to-brand-700 p-8 text-white shadow-xl"
+				>
+					<svg
+						class="h-12 w-12 text-brand-200"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.8"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path d="M12 22a10 10 0 0 0 10-10V5l-10-3L2 5v7a10 10 0 0 0 10 10z" />
+						<path d="m9 12 2 2 4-4" />
+					</svg>
+					<p class="font-display text-2xl leading-tight">
+						Preventative care that keeps your space comfortable, year-round.
+					</p>
+					<p class="text-sm text-brand-100">
+						Bundle pest control with your regular cleaning visits for a complete service.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- Service Area -->
 	<section id="area" class="mx-auto max-w-6xl scroll-mt-24 px-5 py-20 md:py-28">
 		<div class="grid items-center gap-12 md:grid-cols-2">
@@ -472,6 +580,46 @@
 		</div>
 	</section>
 
+	<!-- Why Choose -->
+	<section id="why" class="scroll-mt-24 bg-brand-50 py-20 md:py-28">
+		<div class="mx-auto max-w-6xl px-5">
+			<div class="max-w-2xl">
+				<p class="text-sm font-bold tracking-widest text-brand-500 uppercase">Why choose us</p>
+				<h2 class="mt-2 font-display text-4xl text-brand-900 md:text-5xl">
+					Why Raeleen Cleaning Co.
+				</h2>
+				<p class="mt-4 text-lg text-brand-900/80">
+					Built around consistency, professionalism, and high-quality care — for the people and
+					places that count on us most.
+				</p>
+			</div>
+
+			<div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+				{#each reasons as reason (reason.title)}
+					<div class="rounded-2xl bg-white p-6 ring-1 ring-brand-100">
+						<div
+							class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-300 text-brand-900"
+						>
+							<svg
+								class="h-5 w-5"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<polyline points="20 6 9 17 4 12" />
+							</svg>
+						</div>
+						<h3 class="mt-4 font-display text-xl text-brand-900">{reason.title}</h3>
+						<p class="mt-2 text-sm text-brand-900/70">{reason.description}</p>
+					</div>
+				{/each}
+			</div>
+		</div>
+	</section>
+
 	<!-- About -->
 	<section id="about" class="scroll-mt-24 bg-gradient-to-b from-white to-brand-50 py-20 md:py-28">
 		<div class="mx-auto grid max-w-6xl items-center gap-12 px-5 md:grid-cols-5">
@@ -504,7 +652,8 @@
 				<blockquote
 					class="mt-8 border-l-4 border-brand-300 bg-white/70 py-3 pl-5 font-display text-xl text-brand-800"
 				>
-					"Your space should feel as good as it looks."
+					We don't just clean spaces — we help create environments that feel refreshed, elevated,
+					and ready for everyday life.
 				</blockquote>
 			</div>
 		</div>
